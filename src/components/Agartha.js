@@ -36,6 +36,14 @@ const Agartha = () => {
                 </h3>
               </div>
               <div className="bottom">
+                <div className="education">
+                  <h3>Education</h3>
+                  <h4>{data.education}</h4>
+                </div>
+                <div className="skill">
+                <h3>Skills</h3>
+                  <h4>{data.skill}</h4>
+                </div>
                 <div className="work"> 
                   <h3>Work History</h3>
                   <h4>{data.whistory}</h4>
@@ -43,6 +51,10 @@ const Agartha = () => {
                 <div className="proSum">
                   <h3>Professional Summary</h3>
                   <h4>{data.psummary}</h4>
+                </div>
+                <div className="certificate">
+                <h3>Certificate</h3>
+                  <h4>{data.certificate}</h4> 
                 </div>
               </div>
             </div>
