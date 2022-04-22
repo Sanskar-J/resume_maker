@@ -16,6 +16,9 @@ const Form = () => {
         const address=document.getElementById('address') 
         const psummary=document.getElementById('psummary')
         const whistory =document.getElementById('whistory')
+        const skill=document.getElementById('skill')
+        const education=document.getElementById('education')
+        const certificate=document.getElementById('certificate')
         console.log(name.value)
         const data={
             name:name.value,
@@ -23,7 +26,10 @@ const Form = () => {
             email:email.value,
             address:address.value,
             psummary:psummary.value,
-            whistory:whistory.value
+            whistory:whistory.value,
+            skill:skill.value,
+            education:education.value,
+            certificate:certificate.value
         }
         navigate('/agartha',{ state: data })
     }
@@ -40,10 +46,16 @@ const Form = () => {
   <input type="text" id="email" placeholder="moc.liamg@gmail.com" name="phone" />
   <label for="lname">Address:</label>
   <textarea type="text" id="address" placeholder="112/a ABC colony Mars,Solar system" name="phone" />
+  <label for="lname">Education:</label>
+  <textarea type="text" id="education" placeholder="Enter your education details" name="phone" />
   <label for="lname">Professional Summary:</label>
-  <textarea type="text" id="psummary" placeholder="Enter a text..." name="phone" />
+  <textarea type="text" id="psummary" placeholder="Enter a text." name="phone" />
   <label for="lname">Work History:</label>
-  <textarea type="text" id="whistory" placeholder="Enter a text..." name="phone" />
+  <textarea type="text" id="whistory" placeholder="Enter a text." name="phone" />
+  <label for="lname">Skills:</label>
+  <textarea type="text" id="skill" placeholder="Enter a text." name="phone" />
+  <label for="lname">Certificate</label>
+  <textarea type="text" id="certificate" placeholder="Enter a text." name="phone" />
   <button onClick={handleClick}> SUBMIT</button>
 </form> 
 

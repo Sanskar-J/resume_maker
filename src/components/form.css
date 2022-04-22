@@ -7,18 +7,15 @@ body{
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    
+    justify-content: center;    
 }
 .container2{
     position: absolute;
     height: 100vh;
-    
     background: white;
     margin: 100px;
     border-radius: 20px;
     opacity: .5;
-    
 }
 .newform{
     display: flex;
@@ -28,8 +25,7 @@ body{
     margin: 25px;
     justify-content: center;
     align-items: center;
-    /* border: 10px solid rgb(90, 65, 251); */
-    
+    /* border: 10px solid rgb(90, 65, 251); */   
 }
 h1{
 font-size: 75px;
@@ -45,7 +41,7 @@ input{
     width: 50%;
     height: 20px;
 }
-#address, #psummary, #whistory{
+#address, #psummary, #whistory,#education,#skill,#certificate{
    height: 100px; 
    width:50%;
 }
@@ -56,9 +52,7 @@ button{
     color: white;
     border-radius: 20px;
     font-weight:bold;
-    
 }
-
 @media screen and (max-width: 500px){
     .newform{
         padding: 50px;
@@ -66,5 +60,4 @@ button{
     input{
         width: 80%;
     }
-    
 }
