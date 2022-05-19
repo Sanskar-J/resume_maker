@@ -1,7 +1,62 @@
 import "./Agartha.css";
+import { ColorPicker, useColor } from "react-color-palette";
+import "react-color-palette/lib/css/styles.css";
 import html2canvas from "html2canvas";
 import { useLocation } from "react-router-dom";
 const Agartha = () => {
+    let dl1=false
+    let dl2=false
+    let dl3=false
+  const [color, setColor] = useColor("hex", "#121212");
+  const handleColor=(event)=>{
+    const t=event.target.id
+    const stackTop=document.getElementById('stackTop')
+    const stackMid=document.getElementById('stackMid')
+    const stackBot=document.getElementById('stackBot')
+    const Name=document.querySelector('.Name')
+    const upper=document.querySelector('.upper')
+    const outer=document.querySelector('.outer')
+    
+    if (t==='stackTop') {
+      if(dl1===false){
+        stackTop.classList.add('change')
+        stackTop.style.removeProperty('background-color')
+        Name.classList.add('change')
+        dl1=true
+      }
+      else{
+        stackTop.classList.remove('change')
+        stackTop.style.backgroundColor=color.hex
+        Name.classList.remove('change')
+        dl1=false
+      }
+    }
+    if (t==='stackMid') {
+      if(dl2===false){
+        stackMid.classList.add('change')
+        upper.classList.add('change')
+        dl2=true
+      }
+      else{
+        stackMid.classList.remove('change')
+        upper.classList.remove('change')
+        dl2=false
+      }
+    }
+    if (t==='stackBot') {
+      if(dl3===false){
+        stackBot.classList.add('change')
+
+        outer.classList.add('change')
+        dl3=true
+      }
+      else{
+        stackBot.classList.remove('change')
+        outer.classList.remove('change')
+        dl3=false
+      }
+    }
+  }
   const handleClick = () => {
     const toPDF = document.getElementById("toPDF");
     toPDF.style.width="50vw";
@@ -17,14 +72,23 @@ const Agartha = () => {
 
     console.log("mai chala");
   };
+
   const location = useLocation();
   const data = location.state;
   console.log(data);
   return (
     <>
       <div className="out">
+      <style> {`.change{background-color:`+color.hex+`;}`}</style>
+      <ColorPicker width={456} height={228} color={color} onChange={setColor} hideHSV dark />;
+      <div className="btnColors">
+        <button id="stackTop" onClick={handleColor}></button>
+        <button id="stackMid" onClick={handleColor}></button>
+        <button id="stackBot" onClick={handleColor}></button>
+      </div>
         <div className="extreme" id="toPDF">
           <div className="outer" >
+          
             <div className="container">
               <div className="top">
                 <h1 className="Name">{data.name}</h1>
@@ -36,7 +100,8 @@ const Agartha = () => {
                 </h3>
               </div>
               <div className="bottom">
-                <div className="education">
+              <div className="left">
+              <div className="education">
                   <h3>Education</h3>
                   <h4>{data.education}</h4>
                 </div>
@@ -44,7 +109,9 @@ const Agartha = () => {
                 <h3>Skills</h3>
                   <h4>{data.skill}</h4>
                 </div>
-                <div className="work"> 
+              </div>
+              <div className="right">
+              <div className="work"> 
                   <h3>Work History</h3>
                   <h4>{data.whistory}</h4>
                 </div>
@@ -56,6 +123,7 @@ const Agartha = () => {
                 <h3>Certificate</h3>
                   <h4>{data.certificate}</h4> 
                 </div>
+              </div>               
               </div>
             </div>
           </div>
