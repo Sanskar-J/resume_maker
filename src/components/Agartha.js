@@ -20,14 +20,14 @@ const Agartha = () => {
     if (t==='stackTop') {
       if(dl1===false){
         stackTop.classList.add('change')
-        stackTop.style.removeProperty('background-color')
         Name.classList.add('change')
+        Name.style.removeProperty('background-color')
         dl1=true
       }
       else{
         stackTop.classList.remove('change')
-        stackTop.style.backgroundColor=color.hex
         Name.classList.remove('change')
+        Name.style.backgroundColor=color.hex
         dl1=false
       }
     }
@@ -35,11 +35,13 @@ const Agartha = () => {
       if(dl2===false){
         stackMid.classList.add('change')
         upper.classList.add('change')
+        upper.style.removeProperty('background-color')
         dl2=true
       }
       else{
         stackMid.classList.remove('change')
         upper.classList.remove('change')
+        upper.style.backgroundColor=color.hex
         dl2=false
       }
     }
@@ -48,11 +50,13 @@ const Agartha = () => {
         stackBot.classList.add('change')
 
         outer.classList.add('change')
+        outer.style.removeProperty('background-color')
         dl3=true
       }
       else{
         stackBot.classList.remove('change')
         outer.classList.remove('change')
+        outer.style.backgroundColor=color.hex
         dl3=false
       }
     }
