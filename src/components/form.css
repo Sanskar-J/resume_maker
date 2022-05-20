@@ -9,6 +9,10 @@ body{
     flex-direction: column;
     justify-content: center;    
 }
+.edDetails{  
+    display: flex;
+    flex-direction: column;
+}
 .container2{
     position: absolute;
     height: 100vh;
@@ -48,7 +52,7 @@ input{
 button{
     padding: 12px;
     margin-top: 10px;
-    background-color:#c8a2c8;
+    background-color:#65dc98;
     color: white;
     border-radius: 20px;
     font-weight:bold;
