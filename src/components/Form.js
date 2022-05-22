@@ -1,4 +1,5 @@
 import "./form.css"
+import logo from './logo3.jpg'
 // import {Link,Routes,BrowserRouter as Router,Route} from "react-router-dom"
 import Agartha from "./Agartha"
 import { useNavigate } from "react-router-dom"
@@ -34,7 +35,7 @@ const Form = () => {
         const skill = document.getElementById('skill')
         const skDetails = document.querySelector('.skDetails')
         sk.push(skill.value)
-        skDetails.innerHTML = `${skill.value}` + skDetails.innerHTML
+        skDetails.innerHTML = `<p> ${skill.value} </p>` + skDetails.innerHTML
         b = { sk: sk }
     }
     const handleClick = (event) => {
@@ -63,7 +64,7 @@ const Form = () => {
         navigate('/agartha', { state: data })
     }
     return (<>
-        <div className="container2"></div>
+        <div className="container2"><img src={logo} alt="" srcset="" /></div>
         <div className="container" >
             <form className="newform">
                 <label for="fname">Name:</label>
