@@ -22,7 +22,7 @@ const Form = () => {
         startD.push(dateS.value)
         endD.push(dateE.value)
         degname.push(deg.value)
-        edDetails.innerHTML = ` ${dateS.value} ${dateE.value} ${deg.value}` + edDetails.innerHTML
+        edDetails.innerHTML = ` <p>${dateS.value} ${dateE.value} </br>${deg.value}</p>` + edDetails.innerHTML
         det = {
             startD: startD,
             endD: endD,
@@ -34,7 +34,7 @@ const Form = () => {
         const skill = document.getElementById('skill')
         const skDetails = document.querySelector('.skDetails')
         sk.push(skill.value)
-        skDetails.innerHTML = `${skill.value}` + skDetails.innerHTML
+        skDetails.innerHTML = `<p>${skill.value}</p>` + skDetails.innerHTML
         b = { sk: sk }
     }
     const handleClick = (event) => {

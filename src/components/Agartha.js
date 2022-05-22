@@ -98,7 +98,7 @@ const Agartha = () => {
         </div>
         <div className="extreme" id="toPDF">
           <div className="outer">
-            <div className="container">
+            <div className="contr">
               <div className="top">
                 <h1 className="Name">{data.name}</h1>
                 <h3
