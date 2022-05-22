@@ -66,7 +66,6 @@ const Form = () => {
         <div className="container2"></div>
         <div className="container" >
             <form className="newform">
-                <h1>Form</h1>
                 <label for="fname">Name:</label>
                 <input type="text" id="name" placeholder="John Doe" name="name" />
                 <label for="lname">Phone no.:</label>
@@ -81,7 +80,7 @@ const Form = () => {
                     <input type="date" name="" placeholder="dd-mm-yyyy" id="dateE" />
                     <input type="text" name="" placeholder="Degree" id="deg" />
                 </div>
-                <button onClick={handleEducation}>+</button>
+                <button onClick={handleEducation}>Add field</button>
                 <label for="lname">Professional Summary:</label>
                 <textarea type="text" id="psummary" placeholder="Enter a text." name="phone" />
                 <label for="lname">Work History:</label>
@@ -90,7 +89,7 @@ const Form = () => {
                 <div className="skDetails">
                     <input type="text" id="skill" placeholder="Enter a text." name="phone" />
                 </div>
-                <button onClick={handleSkills}>+</button>
+                <button onClick={handleSkills}>Add field</button>
                 <label for="lname">Certificate</label>
                 <textarea type="text" id="certificate" placeholder="Enter a text." name="phone" />
                 <button onClick={handleClick}> SUBMIT</button>
