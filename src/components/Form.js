@@ -16,6 +16,7 @@ const Form = () => {
     const job=[]
     const jd=[]
     const sk = []
+    let ct=[]
     let det
     let jobdet
     let b
@@ -62,6 +63,13 @@ const Form = () => {
         skDetails.innerHTML = `<p>${skill.value}</p>` + skDetails.innerHTML
         b = { sk: sk }
     }
+    const handleCertificate= (event) => {
+        event.preventDefault()
+        const certificate = document.getElementById('certificate')
+        const ctDetails = document.querySelector('.ctDetails')
+        ct.push(certificate.value)
+        ctDetails.innerHTML = `<p>${certificate.value}</p>` + ctDetails.innerHTML
+    }
     const handleClick = (event) => {
         event.preventDefault()
         const name = document.getElementById('name')
@@ -83,7 +91,7 @@ const Form = () => {
             whistory: jobdet,
             skill: b,
             education: det,
-            certificate: certificate.value
+            certificate: ct
         }
         navigate('/agartha', { state: data })
     }
@@ -122,7 +130,10 @@ const Form = () => {
                 </div>
                 <button onClick={handleSkills}>Add field</button>
                 <label for="lname">Certificate</label>
-                <textarea type="text" id="certificate" placeholder="Enter a text." name="phone" />
+                <div className="ctDetails">
+                    <input type="text" id="certificate" placeholder="Enter a text." name="phone" />
+                </div>
+                <button onClick={handleCertificate}>Add field</button>
                 <button onClick={handleClick}> SUBMIT</button>
             </form>
 
