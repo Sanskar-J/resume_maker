@@ -139,13 +139,14 @@ const Agartha = () => {
                 <div className="right">
                   <div className="work">
                     <h3>Work History</h3>
-                    <h3>Education</h3>
+                    
                     {data.whistory.job.map((wh) => {
                       return (
-                        <h4>
-                          {wh}{data.whistory.jd[l]}{" "}{data.whistory.jobstartD[l]}{" "}
-                          {data.whistory.jobendD[l++]}
-                        </h4>
+                        <>
+                          <h3>{wh}</h3>
+                          <h4>{data.whistory.jd[l]}</h4>{" "}<h4>{data.whistory.jobstartD[l]}{"to"}
+                          {data.whistory.jobendD[l++]}</h4>
+                        </>
                       );
                     })}
                   </div>
@@ -155,7 +156,7 @@ const Agartha = () => {
                   </div>
                   <div className="certificate">
                     <h3>Certificate</h3>
-                    <h4>{data.certificate}</h4>
+                    <h4>{"•"}{data.certificate}</h4>
                   </div>
                 </div>
               </div>

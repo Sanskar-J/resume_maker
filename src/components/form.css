@@ -73,7 +73,7 @@ input{
     width:90%;
     border-radius: 10px;
 }
-#address, #psummary, #whistory,#education,#certificate{
+#address, #psummary, #whistory,#education{
     border-radius: 10px;
     border:2px solid #092047;
     border-top: 1px;
