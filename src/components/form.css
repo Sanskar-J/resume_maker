@@ -58,6 +58,10 @@ label{
     font-size: larger;
     font-style: italic;
 }
+.jobDetails{
+    display: flex;
+    flex-direction: column;
+}
 input{
 
     height: 20px;

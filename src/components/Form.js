@@ -11,8 +11,13 @@ const Form = () => {
     const startD = []
     const endD = []
     const degname = []
+    const jobstartD = []
+    const jobendD = []
+    const job=[]
+    const jd=[]
     const sk = []
     let det
+    let jobdet
     let b
     const handleEducation = (event) => {
         event.preventDefault()
@@ -30,16 +35,31 @@ const Form = () => {
             degname: degname
         }
     }
+    const handleJob = (event) => {
+        event.preventDefault()
+        const dE = document.getElementById('dE')
+        const dS = document.getElementById('dS')
+        const comp = document.getElementById('comp')
+        const des = document.getElementById('des')
+        const jobDetails = document.querySelector('.jobDetails')
+        jobstartD.push(dS.value)
+        jobendD.push(dE.value)
+        job.push(comp.value)
+        jd.push(des.value)
+        jobDetails.innerHTML = ` <p>${dS.value} ${dE.value} </br>${comp.value} </br> ${des.value} </p>` + jobDetails.innerHTML
+        jobdet = {
+            jobstartD:jobstartD,
+            jobendD:jobendD,
+            job:job,
+            jd:jd
+        }
+    }
     const handleSkills = (event) => {
         event.preventDefault()
         const skill = document.getElementById('skill')
         const skDetails = document.querySelector('.skDetails')
         sk.push(skill.value)
-<<<<<<< HEAD
         skDetails.innerHTML = `<p>${skill.value}</p>` + skDetails.innerHTML
-=======
-        skDetails.innerHTML = `<p> ${skill.value} </p>` + skDetails.innerHTML
->>>>>>> 7c25576e55fa5b416ca32e6d27ecf5d0844bdae5
         b = { sk: sk }
     }
     const handleClick = (event) => {
@@ -60,7 +80,7 @@ const Form = () => {
             email: email.value,
             address: address.value,
             psummary: psummary.value,
-            whistory: whistory.value,
+            whistory: jobdet,
             skill: b,
             education: det,
             certificate: certificate.value
@@ -81,15 +101,21 @@ const Form = () => {
                 <textarea type="text" id="address" placeholder="112/a ABC colony Mars,Solar system" name="phone" />
                 <label for="lname">Education:</label>
                 <div className="edDetails">
-                    <input type="date" name="" placeholder="dd-mm-yyyy" id="dateS" />
-                    <input type="date" name="" placeholder="dd-mm-yyyy" id="dateE" />
+                    <input type="month" name="" placeholder="dd-mm-yyyy" id="dateS" />
+                    <input type="month" name="" placeholder="dd-mm-yyyy" id="dateE" />
                     <input type="text" name="" placeholder="Degree" id="deg" />
                 </div>
                 <button onClick={handleEducation}>Add field</button>
                 <label for="lname">Professional Summary:</label>
                 <textarea type="text" id="psummary" placeholder="Enter a text." name="phone" />
                 <label for="lname">Work History:</label>
-                <textarea type="text" id="whistory" placeholder="Enter a text." name="phone" />
+                <div className="jobDetails">
+                 <input type="month" name="" placeholder="Start year" id="dS" />
+                 <input type="month" name="" placeholder="End year" id="dE" />
+                 <input type="text" name="" placeholder="Company" id="comp" />
+                 <textarea type="text" name="" placeholder="Description" id="des" />
+                </div>
+                <button onClick={handleJob}>Add field</button>
                 <label for="lname">Skills:</label>
                 <div className="skDetails">
                     <input type="text" id="skill" placeholder="Enter a text." name="phone" />

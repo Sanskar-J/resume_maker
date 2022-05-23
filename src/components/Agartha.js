@@ -5,6 +5,7 @@ import html2canvas from "html2canvas";
 import { useLocation } from "react-router-dom";
 const Agartha = () => {
   let c = 0;
+  let l=0;
   let j = 1;
   let dl1 = false;
   let dl2 = false;
@@ -138,7 +139,15 @@ const Agartha = () => {
                 <div className="right">
                   <div className="work">
                     <h3>Work History</h3>
-                    <h4>{data.whistory}</h4>
+                    <h3>Education</h3>
+                    {data.whistory.job.map((wh) => {
+                      return (
+                        <h4>
+                          {wh}{data.whistory.jd[l]}{" "}{data.whistory.jobstartD[l]}{" "}
+                          {data.whistory.jobendD[l++]}
+                        </h4>
+                      );
+                    })}
                   </div>
                   <div className="proSum">
                     <h3>Professional Summary</h3>
