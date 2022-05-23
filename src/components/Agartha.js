@@ -118,10 +118,13 @@ const Agartha = () => {
                     <h3>Education</h3>
                     {data.education.degname.map((ed) => {
                       return (
+                        <>
                         <h4>
-                          {ed} {data.education.startD[c]}{" "}
+                          {ed}</h4> 
+                          <h4>{data.education.startD[c]}{" to "}
                           {data.education.endD[c++]}
                         </h4>
+                        </>
                       );
                     })}
                   </div>
@@ -130,7 +133,7 @@ const Agartha = () => {
                     {data.skill.sk.map((s) => {
                       return (
                         <h4>
-                          {j++} {s}{" "}
+                          {"•"} {s}{" "}
                         </h4>
                       );
                     })}
@@ -143,8 +146,8 @@ const Agartha = () => {
                     {data.whistory.job.map((wh) => {
                       return (
                         <>
-                          <h3>{wh}</h3>
-                          <h4>{data.whistory.jd[l]}</h4>{" "}<h4>{data.whistory.jobstartD[l]}{"to"}
+                          <h3 className="jobTitle">{wh}</h3>
+                          <h4>{data.whistory.jd[l]}</h4>{" "}<h4>{data.whistory.jobstartD[l]}{" to "}
                           {data.whistory.jobendD[l++]}</h4>
                         </>
                       );
@@ -153,6 +156,16 @@ const Agartha = () => {
                   <div className="proSum">
                     <h3>Professional Summary</h3>
                     <h4>{data.psummary}</h4>
+                  </div>
+                  <div className="achievement">
+                    <h3>Achievements</h3>
+                    {data.achievement.ach.map((ac) => {
+                      return (
+                        <h4>
+                          {"•"} {ac}{" "}
+                        </h4>
+                      );
+                    })}
                   </div>
                   <div className="certificate">
                     <h3>Certificate</h3>

@@ -16,6 +16,7 @@ const Form = () => {
     const job=[]
     const jd=[]
     const sk = []
+    const ach=[]
     let ct=[]
     let det
     let jobdet
@@ -63,6 +64,14 @@ const Form = () => {
         skDetails.innerHTML = `<p>${skill.value}</p>` + skDetails.innerHTML
         b = { sk: sk }
     }
+    const handleAchievements = (event) => {
+        event.preventDefault()
+        const achievement = document.getElementById('achievement')
+        const acDetails = document.querySelector('.acDetails')
+        ach.push(achievement.value)
+        acDetails.innerHTML = `<p>${achievement.value}</p>` + acDetails.innerHTML
+       
+    }
     const handleCertificate= (event) => {
         event.preventDefault()
         const certificate = document.getElementById('certificate')
@@ -79,6 +88,7 @@ const Form = () => {
         const psummary = document.getElementById('psummary')
         const whistory = document.getElementById('whistory')
         const skill = document.getElementById('skill')
+        const achievement = document.getElementById('achievement')
         const education = document.getElementById('education')
         const certificate = document.getElementById('certificate')
         console.log(name.value)
@@ -90,6 +100,7 @@ const Form = () => {
             psummary: psummary.value,
             whistory: jobdet,
             skill: b,
+            achievement:ach,
             education: det,
             certificate: ct
         }
@@ -129,6 +140,11 @@ const Form = () => {
                     <input type="text" id="skill" placeholder="Enter a text." name="phone" />
                 </div>
                 <button onClick={handleSkills}>Add field</button>
+                <label for="lname">Achievements:</label>
+                <div className="acDetails">
+                    <input type="text" id="achievement" placeholder="Enter a text." name="phone" />
+                </div>
+                <button onClick={handleAchievements}>Add field</button>
                 <label for="lname">Certificate</label>
                 <div className="ctDetails">
                     <input type="text" id="certificate" placeholder="Enter a text." name="phone" />
