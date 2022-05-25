@@ -27,15 +27,20 @@ const Form = () => {
         const dateS = document.getElementById('dateS')
         const deg = document.getElementById('deg')
         const edDetails = document.querySelector('.edDetails')
-        startD.push(dateS.value)
-        endD.push(dateE.value)
-        degname.push(deg.value)
+        if(dateE.value===""||dateS.value===""||deg.value===""){
+            document.getElementById("error").innerText="All the fields are required to be filled."
+        }
+        else{
+            startD.push(dateS.value)
+            endD.push(dateE.value)
+            degname.push(deg.value)
         edDetails.innerHTML = ` <p>${dateS.value} ${dateE.value} </br>${deg.value}</p>` + edDetails.innerHTML
         det = {
             startD: startD,
             endD: endD,
             degname: degname
         }
+    }
     }
     const handleJob = (event) => {
         event.preventDefault()
@@ -44,6 +49,10 @@ const Form = () => {
         const comp = document.getElementById('comp')
         const des = document.getElementById('des')
         const jobDetails = document.querySelector('.jobDetails')
+        if(dE.value===""||dS.value===""||comp.value===""||des.value===""){
+            document.getElementById("error").innerText="All the fields are required to be filled."
+        }
+        else{
         jobstartD.push(dS.value)
         jobendD.push(dE.value)
         job.push(comp.value)
@@ -56,29 +65,44 @@ const Form = () => {
             jd:jd
         }
     }
+    }
     const handleSkills = (event) => {
         event.preventDefault()
         const skill = document.getElementById('skill')
         const skDetails = document.querySelector('.skDetails')
+        if(skill.value===""){
+            document.getElementById("error").innerText="All the fields are required to be filled."
+        }
+        else{
         sk.push(skill.value)
         skDetails.innerHTML = `<p>${skill.value}</p>` + skDetails.innerHTML
         b = { sk: sk }
     }
+}
     const handleAchievements = (event) => {
         event.preventDefault()
         const achievement = document.getElementById('achievement')
         const acDetails = document.querySelector('.acDetails')
+        if(achievement.value===""){
+            document.getElementById("error").innerText="All the fields are required to be filled."
+        }
+        else{
         ach.push(achievement.value)
         acDetails.innerHTML = `<p>${achievement.value}</p>` + acDetails.innerHTML
-       
+        }
     }
     const handleCertificate= (event) => {
         event.preventDefault()
         const certificate = document.getElementById('certificate')
         const ctDetails = document.querySelector('.ctDetails')
+        if(certificate.value===""){
+            document.getElementById("error").innerText="All the fields are required to be filled."
+        }
+        else{
         ct.push(certificate.value)
         ctDetails.innerHTML = `<p>${certificate.value}</p>` + ctDetails.innerHTML
     }
+}
     const handleClick = (event) => {
         event.preventDefault()
         const name = document.getElementById('name')
@@ -86,11 +110,11 @@ const Form = () => {
         const email = document.getElementById('email')
         const address = document.getElementById('address')
         const psummary = document.getElementById('psummary')
-        const whistory = document.getElementById('whistory')
-        const skill = document.getElementById('skill')
-        const achievement = document.getElementById('achievement')
-        const education = document.getElementById('education')
-        const certificate = document.getElementById('certificate')
+        if(name.value===""|| phone.value===""||email.value===""||address.value===""||psummary.value===""||startD.length===0||endD.length===0||jobstartD .length===0||jobendD.length===0||degname.length===0||job.length===0||ach.length===0||jd.length===0||sk.length===0)
+        {
+            document.getElementById("error").innerText="All the fields are required to be filled."
+        }
+        else{
         console.log(name.value)
         const data = {
             name: name.value,
@@ -106,10 +130,12 @@ const Form = () => {
         }
         navigate('/agartha', { state: data })
     }
+    }
     return (<>
         <div className="container2"><img src={logo} alt="" srcset="" /></div>
         <div className="container" >
             <form className="newform">
+            <p id="error"></p>
                 <label for="fname">Name:</label>
                 <input type="text" id="name" placeholder="John Doe" name="name" />
                 <label for="lname">Phone no.:</label>

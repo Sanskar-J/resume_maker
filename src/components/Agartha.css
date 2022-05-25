@@ -108,8 +108,6 @@ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     justify-content: center;
     align-items: center;
 }
-
-
 @media screen and (max-width: 500px){
     .outer{
         width: 80vw;

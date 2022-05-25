@@ -63,7 +63,9 @@ const Agartha = () => {
   };
   const handleClick = () => {
     const toPDF = document.getElementById("toPDF");
+    if(window.innerWidth>400){
     toPDF.style.width = "50vw";
+    }
     html2canvas(toPDF, { useCORS: true }).then((canvas) => {
       let a = document.createElement("a");
       document.body.appendChild(a);
@@ -159,7 +161,7 @@ const Agartha = () => {
                   </div>
                   <div className="achievement">
                     <h3>Achievements</h3>
-                    {data.achievement.ach.map((ac) => {
+                    {data.achievement.map((ac) => {
                       return (
                         <h4>
                           {"•"} {ac}{" "}
