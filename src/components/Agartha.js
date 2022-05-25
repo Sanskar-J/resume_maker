@@ -3,6 +3,7 @@ import { ColorPicker, useColor } from "react-color-palette";
 import "react-color-palette/lib/css/styles.css";
 import html2canvas from "html2canvas";
 import { useLocation } from "react-router-dom";
+import { jsPDF } from "jspdf";
 const Agartha = () => {
   let c = 0;
   let l=0;
@@ -71,11 +72,14 @@ const Agartha = () => {
       document.body.appendChild(a);
       a.download = "test.png";
       a.href = canvas.toDataURL();
-      a.click();
+      const doc=new jsPDF();
+      doc.addImage(canvas,'JPEG',15,40,180,160)
+      doc.save("try.pdf")
+      //a.click();
       toPDF.style.width = "100vw";
     });
 
-    console.log("mai chala");
+    console.log("working");
   };
 
   const location = useLocation();
