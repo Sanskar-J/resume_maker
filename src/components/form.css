@@ -10,7 +10,13 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;  
-      align-items: center;
+      /* align-items: center; */
+}
+#root{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 #error{
 color: red;
@@ -27,19 +33,16 @@ font-style: italic;
     display: flex;
     flex-direction: column;
 }
-.container2{
-    margin: 30px;
+.container2 img{
+    /* margin: 30px; */
     opacity: 0.8;
+    width: 100%;
+
+    border-radius: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: center;    
     align-items: center;
-    /* position: absolute; */
-    /* height: 100vh; */
-    /* background: white; */
-    /* margin: 100px; */
-    border-radius: 20px;
-    /* opacity: .5; */
+
 
 }
 .newform{
@@ -99,7 +102,10 @@ button{
     .newform{
         padding: 50px;
     }
-    input{
-        width: 80%;
+
+
+    .container{
+        width: 100vw;
+        /* margin-left: 90px; */
     }
 }

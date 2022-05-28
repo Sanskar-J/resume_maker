@@ -1,0 +1,7 @@
+{
+    "name": "myResume",
+    "integrations": {
+      "capacitor": {}
+    },
+    "type": "react"
+  }
